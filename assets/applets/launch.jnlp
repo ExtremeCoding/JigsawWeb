@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jnlp href="launch.jnlp" spec="1.0+">
+    <information>
+        <title>Jigsaw Map</title>
+        <vendor>IAS FoS</vendor>
+        <homepage href=""/>
+        <description>Jigsaw Map</description>
+        <description kind="short">Jigsaw Map</description>
+    </information>
+    <update check="always"/>
+    <security>
+<all-permissions/>
+</security>
+    <resources>
+        <j2se version="1.7+"/>
+        <jar href="WWMap.jar" main="true"/>
+    <jar href="lib/gdal.jar"/>
+<jar href="lib/gluegen-rt-natives-linux-amd64.jar"/>
+<jar href="lib/gluegen-rt-natives-linux-i586.jar"/>
+<jar href="lib/gluegen-rt-natives-macosx-universal.jar"/>
+<jar href="lib/gluegen-rt-natives-windows-amd64.jar"/>
+<jar href="lib/gluegen-rt-natives-windows-i586.jar"/>
+<jar href="lib/gluegen-rt.jar"/>
+<jar href="lib/jogl-all-natives-linux-amd64.jar"/>
+<jar href="lib/jogl-all-natives-linux-i586.jar"/>
+<jar href="lib/jogl-all-natives-macosx-universal.jar"/>
+<jar href="lib/jogl-all-natives-windows-amd64.jar"/>
+<jar href="lib/jogl-all-natives-windows-i586.jar"/>
+<jar href="lib/jogl-all.jar"/>
+<jar href="lib/worldwind.jar"/>
+<jar href="lib/worldwindx.jar"/>
+<jar href="lib/plugin.jar"/>
+</resources>
+	<applet-desc main-class="wwmap.WWMap"
+                 name="Jigsaw Map"
+                 width="800" height="600">
+        <param name="separate_jvm" value="true"/>
+    </applet-desc>
+</jnlp>

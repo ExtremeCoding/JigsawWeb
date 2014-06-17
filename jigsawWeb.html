@@ -22,6 +22,36 @@
   				$("#showResults").click(function(){
     				$("#resultsBox").toggle();
   				});
+  				$("#starLayerDeactivate").click(function(){
+  					getWWJApplet().setLayerInvisible("Stars");
+  					$("#starLayerDeactivate").toggle();
+  					$("#starLayerActivate").toggle();
+  				});
+  				$("#starLayerActivate").click(function(){
+  					getWWJApplet().setLayerVisible("Stars");
+  					$("#starLayerDeactivate").toggle();
+  					$("#starLayerActivate").toggle();
+  				});
+  				$("#polLayerActivate").click(function(){
+  					getWWJApplet().setLayerVisible("Political Boundaries");
+  					$("#polLayerDeactivate").toggle();
+  					$("#polLayerActivate").toggle();
+  				});
+  				$("#polLayerDeactivate").click(function(){
+  					getWWJApplet().setLayerInvisible("Political Boundaries");
+  					$("#polLayerDeactivate").toggle();
+  					$("#polLayerActivate").toggle();
+  				});
+  				$("#tacLayerDeactivate").click(function(){
+  					getWWJApplet().setLayerInvisible("Tactical Symbols");
+  					$("#tacLayerDeactivate").toggle();
+  					$("#tacLayerActivate").toggle();
+  				});
+  				$("#tacLayerActivate").click(function(){
+  					getWWJApplet().setLayerVisible("Tactical Symbols");
+  					$("#tacLayerDeactivate").toggle();
+  					$("#tacLayerActivate").toggle();
+  				});
 			});
 		</script>
 		<script language="javascript">
@@ -51,6 +81,10 @@
       			getWWJApplet().gotoLatLon(parseFloat(params[0]), parseFloat(params[1]), parseFloat(params[2]), parseFloat(params[3]), 0);
    			else if(params.length == 5)	// Lat/lon/zoom/heading and pitch
       			getWWJApplet().gotoLatLon(parseFloat(params[0]), parseFloat(params[1]), parseFloat(params[2]), parseFloat(params[3]), parseFloat(params[4]));
+		}
+
+		function setLayerInvisible(layerName) {
+			getWWJApplet().setLayerInvisible(layerName);
 		}
 		// -->
 		</script>
@@ -97,7 +131,22 @@
       						</ul>
     					</div>
       				</div>
-    				<div class="panel panel-primary bs-sidebar affix" style="top: 375px;">
+      				<div id="layerControl" class="panel panel-primary bs-sidebar affix" style="top: 375px;">
+    					<div class="panel-heading">
+    						<span><i class="glyphicon glyphicon-edit" style="padding-right: 8px;"></i>Layer Control</span>
+    					</div>
+    					<div class="panel-body">
+    						<ul class="nav nav-pills nav-stacked">
+        						<li id="starLayerDeactivate"><a href="#">Stars<i class="glyphicon glyphicon-ok" style="color: green; float: right;"></i></a></li>
+        						<li id="starLayerActivate" style="display: none;"><a href="#">Stars<i class="glyphicon glyphicon-remove" style="color: red; float: right;"></i></a></li>
+        						<li id="tacLayerDeactivate"><a href="#">Symbols<i class="glyphicon glyphicon-ok" style="color: green; float: right;"></i></a></li>
+        						<li id="tacLayerActivate" style="display: none;"><a href="#">Symbols<i class="glyphicon glyphicon-remove" style="color: red; float: right;"></i></a></li>
+        						<li id="polLayerActivate"><a href="#">Political Boundaries<i class="glyphicon glyphicon-remove" style="color: red; float: right;"></i></a></li>
+        						<li id="polLayerDeactivate" style="display: none;"><a href="#">Political Boundaries<i class="glyphicon glyphicon-ok" style="color: green; float: right;"></i></a></li>
+      						</ul>
+    					</div>
+      				</div>
+    				<div class="panel panel-primary bs-sidebar affix" style="top: 587px;">
     					<div class="panel-heading">
     						<span><i class="glyphicon glyphicon-stats" style="padding-right: 8px;"></i>System Status</span>
     					</div>
